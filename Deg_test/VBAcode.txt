@@ -1,0 +1,19 @@
+Sub Macro1()
+    Dim i As Long, j As Long
+    Dim Reds As String, Greens As String, Blues As String
+    Dim Red As Long, Green As Long, Blue As Long
+    
+    For i = 1 To 240 Step 1
+        For j = 1 To 320 Step 1
+'            Cells(i, j) = Application.WorksheetFunction.Trim(Cells(i, j))
+            Reds = Left(Cells(i, j), InStr(Cells(i, j), " ") - 1)
+            Greens = Mid(Cells(i, j), InStr(Cells(i, j), " ") + 1)
+            Greens = Left(Cells(i, j), InStr(Cells(i, j), " ") - 1)
+            Blues = Right(Cells(i, j), InStr(Cells(i, j), " ") - 1)
+            Red = Int(Reds)
+            Green = Int(Greens)
+            Blue = Int(Blues)
+            Cells(i, j).Interior.Color = RGB(Red, Green, Blue)
+        Next
+    Next
+End Sub
