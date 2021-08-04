@@ -1,3 +1,11 @@
+"""
+Difference
+frame : 200
+criticalpoint : 5
+vc_dl > 9
+"""
+
+
 from __future__ import print_function
 
 import firebase_admin
@@ -105,7 +113,7 @@ def draw_flow(q, post, prev, step=32): #step : The points will be detailed for l
         vc = vector_calc(x1, y1, _x2, _y2)    #インスタンス生成
         vc.vector()
         
-        if optoff == False and vc.dl > 8 and (-35 < vc.theta < 35 or vc.theta > 145 or vc.theta < -145):
+        if optoff == False and vc.dl > 9 and (-35 < vc.theta < 35 or vc.theta > 145 or vc.theta < -145):
             cv.polylines(vis, [oneline], 0, (0, 0, 255))
             cv.circle(vis, (x1, y1), 1, (0, 0, 255), -1)
             count += 1
@@ -171,7 +179,7 @@ def main():
         ##########################
         prevgray = postgray
         
-        if flame >= 450 :
+        if flame >= 250 :
             if criticalpoint >= 5 :
                 #tsound = threading.Thread(target=sound)
                 #tsound.start()

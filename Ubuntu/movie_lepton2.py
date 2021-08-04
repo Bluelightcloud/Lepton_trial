@@ -1,3 +1,10 @@
+"""
+Difference
+frame : 450 -> 300
+criticalpoint : 5 -> 4
+"""
+
+
 from __future__ import print_function
 
 import firebase_admin
@@ -171,8 +178,8 @@ def main():
         ##########################
         prevgray = postgray
         
-        if flame >= 450 :
-            if criticalpoint >= 5 :
+        if flame >= 300 :
+            if criticalpoint >= 4 :
                 #tsound = threading.Thread(target=sound)
                 #tsound.start()
                 print('Detection : {0}'.format(criticalpoint))

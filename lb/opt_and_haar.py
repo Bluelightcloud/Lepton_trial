@@ -159,7 +159,7 @@ def main():
         ##########################
         prevgray = postgray
         
-        if 12 >= time.time() - start >= 10 :
+        if 7 >= time.time() - start >= 6 :
             if criticalpoint >= 5 :
                 #tsound = threading.Thread(target=sound)
                 #tsound.start()
